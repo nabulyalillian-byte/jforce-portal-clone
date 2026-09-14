@@ -138,7 +138,7 @@ const orderSteps = [
   { step: 12, title: "Step 12", description: "Place the order and note down the Order Number for tracking." },
 ];
 
-const brands = ["Xiaomi", "Century", "NIVEA", "SAMSUNG", "Unilever", "Reckitt", "TECNO", "Infinix", "ECOFLOW"];
+const brands = ["Xiaomi", "NIVEA", "SAMSUNG", "Unilever", "Reckitt", "TECNO", "Infinix"];
 
 const levels = [
   { name: "PROBATION", target: "UGX 180,000" },
