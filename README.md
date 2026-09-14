@@ -46,7 +46,7 @@ Replicate the exact design, layout, content, and interactive features of the Jum
    - Expandable interactive accordion for common agent questions (how to make money, what is JForce, what to sell, earnings, activation).
 
 10. "Testimonial from a J-Force Agent":
-    - Video embed card with browser header controls (red, yellow, green dots) and YouTube embed (https://www.youtube.com/embed/aIbDDBcI2WQ).
+    - Video embed card with browser header controls (red, yellow, green dots) and YouTube embed (https://www.youtube.com/embed/hdD7oJMrg44).
 
 11. "Meet Our Managers":
     - Regional managers grid: Dorcas Adetona (Operations Manager), Ezekiel Solomon (Regional Manager Kampala & Central), Stephen Ogwuche (Western Region), Daniel Akuma (Eastern Region), Kasimu Mudi (Northern Region) with photos, titles, and mailto links.
