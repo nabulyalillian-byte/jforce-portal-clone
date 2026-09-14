@@ -140,12 +140,14 @@ const orderSteps = [
 const brands = ["Xiaomi", "adidas", "Century", "NIVEA", "SAMSUNG", "Unilever", "Reckitt", "TECNO", "Infinix", "ECOFLOW"];
 
 const levels = [
-  { name: "Bronze", target: "UGX 180,000+", color: "bg-level-bronze", icon: Star },
-  { name: "Silver", target: "UGX 360,000+", color: "bg-level-silver", icon: Star },
-  { name: "Gold", target: "UGX 500,000+", color: "bg-level-gold", icon: Trophy },
-  { name: "Platinum", target: "UGX 1,000,000+", color: "bg-level-platinum", icon: Trophy },
-  { name: "Diamond", target: "UGX 5,000,000+", color: "bg-level-diamond", icon: Sparkles },
-  { name: "Top Seller", target: "UGX 13,000,000+", color: "bg-primary", icon: Rocket },
+  { name: "Probation", target: "UGX 180,000", color: "bg-teal-600", icon: MapPin },
+  { name: "Bronze", target: "UGX 900,000", color: "bg-level-bronze", icon: Star },
+  { name: "Silver", target: "UGX 2,700,000", color: "bg-level-silver", icon: Star },
+  { name: "Gold", target: "UGX 5,500,000", color: "bg-level-gold", icon: Trophy },
+  { name: "Captain", target: "UGX 11,000,000", color: "bg-amber-600", icon: Target },
+  { name: "Platinum", target: "UGX 18,000,000", color: "bg-level-platinum", icon: Trophy },
+  { name: "Elite", target: "UGX 27,000,000", color: "bg-indigo-600", icon: Rocket },
+  { name: "Diamond", target: "UGX 35,000,000", color: "bg-level-diamond", icon: Sparkles },
 ];
 
 const faqs = [
@@ -282,7 +284,7 @@ function Index() {
       <div className="mt-10"><EarningsCalculator /></div>
       <div className="mt-6 grid gap-5 lg:grid-cols-3"><article className="info-card"><WalletCards /><div><h3>Payout Dates</h3><p>1st Payout: 15th–18th of the month. 2nd Payout: 2nd–5th of the following month.</p></div></article><article className="info-card"><UsersRound /><div><h3>Indirect Commission</h3><p>Fixed at 1% across all levels. Minimum team sales must be UGX 360,000 completed per month excluding the team leader.</p></div></article><article className="info-card"><PackageCheck /><div><h3>General Rules</h3><p>Consultants must place a minimum order(s) worth UGX 180,000 to be eligible for commission. Paid on orders that attain Delivered Final status (15 days post-delivery).</p></div></article></div></div></section>
 
-      <section className="py-20 sm:py-24"><div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10"><SectionHeading eyebrow="Grow every month" title="New JForce Levels" description="Climb the ladder as your monthly sales volume increases and aim for the top." /><div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-6">{levels.map(({ name, target, color, icon: Icon }, index) => <article key={name} className="relative overflow-hidden rounded-lg border border-border bg-card p-5 text-center shadow-sm"><div className={`mx-auto grid size-12 place-items-center rounded-full ${color} text-primary-foreground`}><Icon className="size-5" /></div><p className="mt-4 text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground">Level {index + 1}</p><h3 className="mt-1 font-extrabold text-jforce-navy">{name}</h3><p className="mt-2 text-sm font-bold text-primary">{target}</p></article>)}</div></div></section>
+      <section className="py-20 sm:py-24"><div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10"><SectionHeading eyebrow="Effective from May 2nd 2026" title="New JForce Levels: Ascend to Greatness!" description="Achieve higher goals &amp; earn bigger rewards as your monthly sales volume increases." /><div className="grid gap-4 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-8">{levels.map(({ name, target, color, icon: Icon }, index) => <article key={name} className="relative overflow-hidden rounded-lg border border-border bg-card p-4 text-center shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-jforce"><div className={`mx-auto grid size-12 place-items-center rounded-full ${color} text-primary-foreground`}><Icon className="size-5" /></div><p className="mt-4 text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground">Level {index + 1}</p><h3 className="mt-1 font-extrabold text-jforce-navy text-base">{name}</h3><p className="mt-2 text-xs font-bold text-primary">{target}</p></article>)}</div></div></section>
 
       <section className="bg-section py-20 sm:py-24"><div className="mx-auto max-w-5xl px-5 sm:px-8 lg:px-10"><SectionHeading eyebrow="Real JForce story" title="Testimonial from a J-Force Agent" description="Hear directly from an agent about the journey, community, and opportunity." /><div className="overflow-hidden rounded-lg border border-border bg-card shadow-image"><div className="flex items-center gap-2 border-b border-border bg-muted px-4 py-3" aria-hidden="true"><span className="size-3 rounded-full bg-browser-red" /><span className="size-3 rounded-full bg-browser-yellow" /><span className="size-3 rounded-full bg-browser-green" /><span className="ml-3 h-6 flex-1 rounded bg-background" /></div><div className="aspect-video"><iframe className="size-full" src="https://www.youtube.com/embed/aIbDDBcI2WQ" title="Testimonial from a JForce agent" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen /></div></div></div></section>
 

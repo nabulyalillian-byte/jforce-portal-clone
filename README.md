@@ -39,8 +39,8 @@ Replicate the exact design, layout, content, and interactive features of the Jum
      - Input sales amount in Uganda Shillings (UGX)
      - Dynamic calculation of Estimated Direct Commission percentage and total amount, plus indirect commission info.
 
-8. "New JForce Levels":
-   - Target tiers and monthly sales volume ladder (Bronze to Top tiers with progressive targets up to UGX 13,000,000+).
+8. "New JForce Levels: Ascend to Greatness!":
+   - 8 tier progression ladder effective May 2nd 2026: Probation (UGX 180,000), Bronze (UGX 900,000), Silver (UGX 2,700,000), Gold (UGX 5,500,000), Captain (UGX 11,000,000), Platinum (UGX 18,000,000), Elite (UGX 27,000,000), and Diamond (UGX 35,000,000).
 
 9. "Frequently Asked Questions" (Accordion):
    - Expandable interactive accordion for common agent questions (how to make money, what is JForce, what to sell, earnings, activation).
