@@ -11,7 +11,7 @@ Replicate the exact design, layout, content, and interactive features of the Jum
 
 2. Brand Logo Marquee / Slider:
    - "Trusted by Jumia Uganda & global brands"
-   - Infinite horizontal scrolling track with grayscale-to-color hover cards for brands: Xiaomi, Adidas, Century, Nivea, Samsung, Unilever, Reckitt, Tecno, Infinix, Ecoflow.
+   - Infinite horizontal scrolling track with grayscale-to-color hover cards for brands: Xiaomi, Century, Nivea, Samsung, Unilever, Reckitt, Tecno, Infinix, Ecoflow.
 
 3. "Why Join the JForce Affiliate Program?":
    - Clean card grid with benefits: Unlimited Earning Potential, Sell Trusted Products, Flexible Work Hours, Dedicated Support & Community.
