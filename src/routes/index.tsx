@@ -20,6 +20,7 @@ import {
   Mail,
   MapPin,
   Megaphone,
+  Menu,
   PackageCheck,
   Percent,
   Phone,
@@ -123,19 +124,19 @@ const joinSteps = [
 ];
 
 const orderSteps = [
-  ["Download the Jumia app", "Get the Jumia app from Google Play or the App Store, or visit jumia.ug."],
-  ["Log in to your account", "Use the Jumia account connected to your registered JForce details."],
-  ["Find a product", "Use the search bar or browse categories to find what your customer needs."],
-  ["Open the product page", "Check the product details, price, seller rating, and availability."],
-  ["Add the item to cart", "Choose the correct variation and quantity, then tap Add to Cart."],
-  ["Review your cart", "Tap the cart icon and confirm every item and quantity before continuing."],
-  ["Proceed to checkout", "Select Checkout to start entering the customer's delivery information."],
-  ["Enter delivery address", "Add the recipient's correct name, phone number, and full delivery address."],
-  ["Choose delivery method", "Select door delivery or a convenient Jumia pickup station."],
-  ["Choose payment method", "Select an available option such as cash on delivery or prepaid payment."],
-  ["Review order summary", "Confirm the products, delivery fee, address, payment, and total amount."],
-  ["Place the order", "Complete the purchase and keep the order number for tracking."],
-] as const;
+  { step: 1, title: "Step 1", description: "Download the Jumia app on Google Play Store or the Apple Store." },
+  { step: 2, title: "Step 2", description: "Open the app you just downloaded or visit the Jumia homepage." },
+  { step: 3, title: "Step 3", description: "Log into your Jumia account with your JForce details. Purchases must be made through this account." },
+  { step: 4, title: "Step 4", description: "Search for the product you want or browse through categories." },
+  { step: 5, title: "Step 5", description: "Select the item and add it to your cart. You can adjust the quantity." },
+  { step: 6, title: "Step 6", description: "Review your cart to confirm all items, variations, and quantities before continuing." },
+  { step: 7, title: "Step 7", description: "Click Proceed to Checkout to enter recipient's delivery information." },
+  { step: 8, title: "Step 8", description: "Enter recipient's name, phone number, and detailed delivery address accurately." },
+  { step: 9, title: "Step 9", description: "Choose your preferred delivery method (Door Delivery or Jumia Pickup Station)." },
+  { step: 10, title: "Step 10", description: "Choose payment method (Prepaid or Cash on Delivery where available)." },
+  { step: 11, title: "Step 11", description: "Double-check order summary including delivery fees and total amount." },
+  { step: 12, title: "Step 12", description: "Place the order and note down the Order Number for tracking." },
+];
 
 const brands = ["Xiaomi", "adidas", "Century", "NIVEA", "SAMSUNG", "Unilever", "Reckitt", "TECNO", "Infinix", "ECOFLOW"];
 
@@ -278,7 +279,72 @@ function Index() {
 
       <section className="py-20 sm:py-24"><div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10"><SectionHeading eyebrow="A simple path" title="How Jumia JForce Works" description="Follow four straightforward steps to kickstart your journey and begin earning." /><div className="relative grid gap-8 md:grid-cols-4"><div className="absolute left-[12.5%] right-[12.5%] top-8 hidden h-0.5 bg-primary/20 md:block" aria-hidden="true" />{joinSteps.map(({ title, description, icon: Icon }, index) => <article key={title} className="relative text-center"><div className="relative mx-auto grid size-16 place-items-center rounded-full bg-jforce-navy text-primary-foreground shadow-lg"><Icon className="size-6" /><span className="absolute -right-1 -top-1 grid size-6 place-items-center rounded-full bg-primary text-xs font-black text-primary-foreground">{index + 1}</span></div><h3 className="mt-6 text-lg font-bold text-jforce-navy">{title}</h3><p className="mt-2 text-sm leading-6 text-muted-foreground">{description}</p></article>)}</div></div></section>
 
-      <section className="bg-jforce-navy py-20 text-primary-foreground sm:py-24"><div className="mx-auto grid max-w-7xl items-center gap-12 px-5 sm:px-8 lg:grid-cols-[.9fr_1.1fr] lg:px-10"><div><p className="text-sm font-bold uppercase tracking-[0.16em] text-jforce-aqua">Your first customer order</p><h2 className="mt-3 text-3xl font-extrabold sm:text-4xl">How to Place Your First Order</h2><p className="mt-5 max-w-lg leading-7 text-primary-foreground/70">Follow these easy steps to successfully place an order as a JForce agent.</p><div className="mt-8 hidden rounded-lg border border-primary-foreground/15 bg-primary-foreground/5 p-6 lg:block"><Download className="size-8 text-primary" /><p className="mt-4 font-bold">Start with the Jumia app</p><p className="mt-2 text-sm leading-6 text-primary-foreground/65">Make sure your account is linked to your JForce registration before placing the order.</p></div></div><div className="relative pl-3 sm:pl-6">{orderSteps.map(([title, description], index) => <div key={title} className="relative grid grid-cols-[42px_minmax(0,1fr)] gap-4 pb-7 last:pb-0"><div className="absolute bottom-0 left-[20px] top-10 w-px bg-primary-foreground/20 last:hidden" /><div className="relative z-10 grid size-10 place-items-center rounded-full border border-primary/40 bg-jforce-navy text-sm font-black text-primary">{index + 1}</div><div><h3 className="font-bold">{title}</h3><p className="mt-1 text-sm leading-6 text-primary-foreground/65">{description}</p></div></div>)}</div></div></section>
+      <section className="bg-background py-16 sm:py-24">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6">
+          <div className="mb-10 hidden items-center justify-between gap-4 rounded-xl border border-border bg-card p-3 shadow-sm md:flex">
+            <div className="flex items-center gap-3">
+              <Menu className="size-5 text-muted-foreground" />
+              <span className="text-xl font-black tracking-tight text-foreground">
+                JUMIA <span className="text-primary">★</span>
+              </span>
+            </div>
+            <div className="flex flex-1 max-w-xl items-center gap-2 rounded-full border border-input bg-muted/40 px-4 py-1.5 text-sm">
+              <Search className="size-4 text-muted-foreground" />
+              <span className="flex-1 text-muted-foreground">Search products, brands and categories</span>
+              <span className="rounded-full bg-primary px-4 py-1 text-xs font-bold text-primary-foreground">Search</span>
+            </div>
+            <div className="flex items-center gap-5 text-xs font-semibold text-foreground">
+              <span className="flex items-center gap-1"><UserRound className="size-4 text-muted-foreground" /> Hi, Agent</span>
+              <span className="flex items-center gap-1"><Headphones className="size-4 text-muted-foreground" /> Help</span>
+              <span className="flex items-center gap-1"><ShoppingCart className="size-4 text-muted-foreground" /> Cart</span>
+            </div>
+          </div>
+
+          <div className="mb-14 text-center">
+            <h2 className="text-3xl font-black tracking-tight text-foreground sm:text-5xl">
+              How to Place Your First Order
+            </h2>
+            <p className="mt-3 text-base text-muted-foreground sm:text-lg">
+              Follow these easy steps to successfully place your first order as a JForce agent.
+            </p>
+          </div>
+
+          <div className="relative mx-auto max-w-4xl">
+            <div className="absolute left-6 top-6 bottom-6 w-0.5 bg-primary/25 md:left-1/2 md:-translate-x-1/2" aria-hidden="true" />
+
+            <div className="space-y-8 md:space-y-10">
+              {orderSteps.map(({ step, title, description }) => {
+                const isEven = step % 2 === 0;
+                return (
+                  <div
+                    key={step}
+                    className={`relative flex flex-col md:flex-row items-center ${
+                      isEven ? "md:flex-row-reverse" : ""
+                    }`}
+                  >
+                    <div className="w-full pl-14 md:w-1/2 md:pl-0 md:px-8">
+                      <div className="rounded-xl border border-border bg-card p-6 shadow-sm transition duration-300 hover:shadow-jforce">
+                        <span className="inline-block text-sm font-bold text-primary mb-1">
+                          {title}
+                        </span>
+                        <p className="text-sm leading-relaxed text-foreground/80">
+                          {description}
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="absolute left-0 top-1/2 -translate-y-1/2 md:static md:translate-y-0 z-10 grid size-12 shrink-0 place-items-center rounded-full bg-primary text-base font-black text-primary-foreground shadow-md">
+                      {step}
+                    </div>
+
+                    <div className="hidden w-1/2 md:block" />
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section className="bg-section py-20 sm:py-24"><div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10"><SectionHeading eyebrow="Transparent rewards" title="Commission Structure" description="Your direct rate depends on your region and product bucket. Eligible team sales also attract a fixed 1% indirect rate." /><div className="overflow-hidden rounded-lg border border-border bg-card shadow-sm"><div className="bg-jforce-teal px-6 py-5 text-primary-foreground"><h3 className="text-lg font-bold">B2C Direct Commission Rates (All Levels)</h3><p className="mt-1 text-sm text-primary-foreground/70">Percentage of eligible delivered order value</p></div><div className="overflow-x-auto"><table className="w-full min-w-[620px] text-left"><thead><tr className="border-b border-border bg-muted"><th className="p-4 text-sm font-bold text-jforce-navy">Region / Location</th><th className="p-4 text-sm font-bold text-jforce-navy">Low</th><th className="p-4 text-sm font-bold text-jforce-navy">Medium</th><th className="p-4 text-sm font-bold text-jforce-navy">High</th><th className="p-4 text-sm font-bold text-jforce-navy">Super High</th></tr></thead><tbody><tr className="border-b border-border"><td className="p-4 font-semibold">Prime (Greater Kampala &amp; Entebbe)</td><td className="p-4 font-bold text-primary">1.00%</td><td className="p-4 font-bold text-primary">1.50%</td><td className="p-4 font-bold text-primary">2.00%</td><td className="p-4 font-bold text-primary">3.00%</td></tr><tr><td className="p-4 font-semibold">Non Prime (Upcountry)</td><td className="p-4 font-bold text-primary">1.50%</td><td className="p-4 font-bold text-primary">2.30%</td><td className="p-4 font-bold text-primary">3.00%</td><td className="p-4 font-bold text-primary">4.50%</td></tr></tbody></table></div></div><div className="mt-6 grid gap-5 md:grid-cols-2 lg:grid-cols-4"><div className="bucket-card"><span>Low</span><h3>Essentials &amp; Care</h3><p>Beverages, Food cupboard, Household care, Laundry, Livestock</p></div><div className="bucket-card"><span>Medium</span><h3>Tech &amp; Electronics</h3><p>Appliances, Cameras, Mobile Accessories, Mobile Phones, Printers, Tablets, TV &amp; Video Accessories</p></div><div className="bucket-card"><span>High</span><h3>Home &amp; Hardware</h3><p>Camera Accessories, Computer, Consoles, Home, Small Appliances, Tablet Accessories, Tobacco</p></div><div className="bucket-card"><span>Super High</span><h3>Style, Sports &amp; Auto</h3><p>Fashion, Automotive &amp; Motorcycles, Books &amp; Stationery, Computer accessories, Games, Kids and Baby, Musical Instruments, Sport &amp; Fitness</p></div></div>
       <div className="mt-10"><EarningsCalculator /></div>
