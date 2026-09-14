@@ -48,8 +48,6 @@ Replicate the exact design, layout, content, and interactive features of the Jum
 10. "Testimonial from a J-Force Agent":
     - Video embed card with browser header controls (red, yellow, green dots) and YouTube embed (https://www.youtube.com/embed/hdD7oJMrg44).
 
-11. "Meet Our Managers":
-    - Regional managers grid: Dorcas Adetona (Operations Manager), Ezekiel Solomon (Regional Manager Kampala & Central), Stephen Ogwuche (Western Region), Daniel Akuma (Eastern Region), Kasimu Mudi (Northern Region) with photos, titles, and mailto links.
     - Footer contact links to JForce website & Facebook page.
 
 Use Jumia's signature orange (#f68b1e) and deep navy/teal (#1f5673) palette, crisp typography, smooth hover animations, and fully responsive layouts.

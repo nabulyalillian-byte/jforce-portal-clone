@@ -160,13 +160,6 @@ const faqs = [
   ["What is activation?", "Activation is achieved when a consultant meets the qualifying delivered-order value required for the commission period."],
 ];
 
-const managers = [
-  { name: "Dorcas Adetona", role: "Operations Manager", photo: "https://ng.jumia.is/cms/0-1-initiatives/jforce/2025/jforee.jpg", position: "object-center" },
-  { name: "Ezekiel Solomon", role: "Regional Manager Kampala & Central", photo: "https://ng.jumia.is/cms/0-1-initiatives/jforce/2024/managers/Ezekiel-solomon-updated.jpg", position: "object-top" },
-  { name: "Stephen Ogwuche", role: "Regional Manager Western Region", photo: "https://ng.jumia.is/cms/0-1-initiatives/jforce/stephen-ogwuche.png", position: "object-top" },
-  { name: "Daniel Akuma", role: "Regional Manager Eastern Region", photo: "https://ng.jumia.is/cms/0-1-initiatives/jforce/2024/managers/akuma-daiel.png", position: "object-top" },
-  { name: "Kasimu Mudi", role: "Regional Manager Northern Region", photo: "https://ng.jumia.is/cms/0-1-initiatives/jforce/2025/jforee.jpg", position: "object-right" },
-];
 
 function SectionHeading({ eyebrow, title, description }: { eyebrow?: string; title: string; description?: string }) {
   return (
@@ -354,7 +347,6 @@ function Index() {
 
       <section className="bg-section py-20 sm:py-24"><div className="mx-auto max-w-5xl px-5 sm:px-8 lg:px-10"><SectionHeading eyebrow="Real JForce story" title="Testimonial from a J-Force Agent" description="Hear directly from an agent about the journey, community, and opportunity." /><div className="overflow-hidden rounded-lg border border-border bg-card shadow-image"><div className="flex items-center gap-2 border-b border-border bg-muted px-4 py-3" aria-hidden="true"><span className="size-3 rounded-full bg-browser-red" /><span className="size-3 rounded-full bg-browser-yellow" /><span className="size-3 rounded-full bg-browser-green" /><span className="ml-3 h-6 flex-1 rounded bg-background" /></div><div className="aspect-video"><iframe className="size-full" src="https://www.youtube.com/embed/hdD7oJMrg44" title="Testimonial from a JForce agent" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen /></div></div></div></section>
 
-      <section className="py-20 sm:py-24"><div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10"><SectionHeading eyebrow="Support across Uganda" title="Meet Our Managers" description="Get in touch with our dedicated team across different regions." /><div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-5">{managers.map((manager) => <article key={manager.name} className="group overflow-hidden rounded-lg bg-card shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-jforce"><img src={manager.photo} alt={`${manager.name}, ${manager.role}`} loading="lazy" className={`aspect-[4/3] w-full bg-muted object-cover ${manager.position}`} /><div className="p-5"><h3 className="font-bold text-jforce-navy">{manager.name}</h3><p className="mt-1 min-h-10 text-sm leading-5 text-muted-foreground">{manager.role}</p><a href={`mailto:?subject=JForce enquiry for ${encodeURIComponent(manager.name)}`} aria-label={`Email ${manager.name}`} className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-primary hover:underline"><Mail className="size-4" /> Send an email</a></div></article>)}</div></div></section>
 
       <section className="bg-jforce-navy py-20 text-primary-foreground sm:py-24"><div className="mx-auto max-w-4xl px-5 sm:px-8 lg:px-10"><SectionHeading eyebrow="Get the answers" title="Frequently Asked Questions" description="Everything you need to know before starting your JForce journey." /><Accordion type="single" collapsible className="overflow-hidden rounded-lg bg-card text-foreground shadow-jforce">{faqs.map(([question, answer], index) => <AccordionItem value={`faq-${index}`} key={question} className="px-5 last:border-b-0 sm:px-7"><AccordionTrigger className="py-5 text-base font-bold text-jforce-navy hover:no-underline">{question}</AccordionTrigger><AccordionContent className="pr-8 text-sm leading-7 text-muted-foreground">{answer}</AccordionContent></AccordionItem>)}</Accordion></div></section>
 
