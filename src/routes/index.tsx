@@ -140,8 +140,8 @@ const orderSteps = [
 const brands = ["Xiaomi", "adidas", "Century", "NIVEA", "SAMSUNG", "Unilever", "Reckitt", "TECNO", "Infinix", "ECOFLOW"];
 
 const levels = [
-  { name: "Bronze", target: "UGX 65,000+", color: "bg-level-bronze", icon: Star },
-  { name: "Silver", target: "UGX 250,000+", color: "bg-level-silver", icon: Star },
+  { name: "Bronze", target: "UGX 180,000+", color: "bg-level-bronze", icon: Star },
+  { name: "Silver", target: "UGX 360,000+", color: "bg-level-silver", icon: Star },
   { name: "Gold", target: "UGX 500,000+", color: "bg-level-gold", icon: Trophy },
   { name: "Platinum", target: "UGX 1,000,000+", color: "bg-level-platinum", icon: Trophy },
   { name: "Diamond", target: "UGX 5,000,000+", color: "bg-level-diamond", icon: Sparkles },
@@ -176,10 +176,13 @@ function SectionHeading({ eyebrow, title, description }: { eyebrow?: string; tit
 }
 
 function EarningsCalculator() {
-  const [location, setLocation] = useState("major");
+  const [location, setLocation] = useState("prime");
   const [bucket, setBucket] = useState("medium");
-  const [sales, setSales] = useState("250000");
-  const rates = location === "major" ? { low: 1, medium: 2, high: 3 } : { low: 2, medium: 4, high: 6 };
+  const [sales, setSales] = useState("360000");
+  const rates =
+    location === "prime"
+      ? { low: 1.0, medium: 1.5, high: 2.0, super_high: 3.0 }
+      : { low: 1.5, medium: 2.3, high: 3.0, super_high: 4.5 };
   const rate = rates[bucket as keyof typeof rates];
   const amount = Number(sales.replace(/[^0-9.]/g, "")) || 0;
   const commission = useMemo(() => amount * (rate / 100), [amount, rate]);
@@ -196,17 +199,25 @@ function EarningsCalculator() {
         </div>
         <div className="space-y-6">
           <div className="space-y-2">
-            <Label htmlFor="location" className="font-semibold">Select City Location</Label>
+            <Label htmlFor="location" className="font-semibold">Select Region Location</Label>
             <Select value={location} onValueChange={setLocation}>
               <SelectTrigger id="location" className="h-12 bg-background"><SelectValue /></SelectTrigger>
-              <SelectContent><SelectItem value="major">Kampala, Entebbe or Jinja</SelectItem><SelectItem value="other">Other Cities</SelectItem></SelectContent>
+              <SelectContent>
+                <SelectItem value="prime">Prime (Greater Kampala &amp; Entebbe)</SelectItem>
+                <SelectItem value="non_prime">Non Prime (Upcountry)</SelectItem>
+              </SelectContent>
             </Select>
           </div>
           <div className="space-y-2">
             <Label htmlFor="bucket" className="font-semibold">Select Product Bucket</Label>
             <Select value={bucket} onValueChange={setBucket}>
               <SelectTrigger id="bucket" className="h-12 bg-background"><SelectValue /></SelectTrigger>
-              <SelectContent><SelectItem value="low">Low commission bucket</SelectItem><SelectItem value="medium">Medium commission bucket</SelectItem><SelectItem value="high">High commission bucket</SelectItem></SelectContent>
+              <SelectContent>
+                <SelectItem value="low">Low commission bucket</SelectItem>
+                <SelectItem value="medium">Medium commission bucket</SelectItem>
+                <SelectItem value="high">High commission bucket</SelectItem>
+                <SelectItem value="super_high">Super High commission bucket</SelectItem>
+              </SelectContent>
             </Select>
           </div>
           <div className="space-y-2">
@@ -224,7 +235,7 @@ function EarningsCalculator() {
         </div>
         <div className="mt-10 border-t border-primary-foreground/20 pt-6">
           <p className="font-bold">Indirect Commission</p>
-          <p className="mt-2 text-sm leading-6 text-primary-foreground/75">Earn an additional 0.5% on eligible team sales once your team reaches the UGX 130,000 monthly threshold.</p>
+          <p className="mt-2 text-sm leading-6 text-primary-foreground/75">Indirect commission is fixed at 1% across all levels once completed team sales reach UGX 360,000/month (excluding team leader).</p>
         </div>
       </div>
     </div>
@@ -267,9 +278,9 @@ function Index() {
 
       <section className="bg-jforce-navy py-20 text-primary-foreground sm:py-24"><div className="mx-auto grid max-w-7xl items-center gap-12 px-5 sm:px-8 lg:grid-cols-[.9fr_1.1fr] lg:px-10"><div><p className="text-sm font-bold uppercase tracking-[0.16em] text-jforce-aqua">Your first customer order</p><h2 className="mt-3 text-3xl font-extrabold sm:text-4xl">How to Place Your First Order</h2><p className="mt-5 max-w-lg leading-7 text-primary-foreground/70">Follow these easy steps to successfully place an order as a JForce agent.</p><div className="mt-8 hidden rounded-lg border border-primary-foreground/15 bg-primary-foreground/5 p-6 lg:block"><Download className="size-8 text-primary" /><p className="mt-4 font-bold">Start with the Jumia app</p><p className="mt-2 text-sm leading-6 text-primary-foreground/65">Make sure your account is linked to your JForce registration before placing the order.</p></div></div><div className="relative pl-3 sm:pl-6">{orderSteps.map(([title, description], index) => <div key={title} className="relative grid grid-cols-[42px_minmax(0,1fr)] gap-4 pb-7 last:pb-0"><div className="absolute bottom-0 left-[20px] top-10 w-px bg-primary-foreground/20 last:hidden" /><div className="relative z-10 grid size-10 place-items-center rounded-full border border-primary/40 bg-jforce-navy text-sm font-black text-primary">{index + 1}</div><div><h3 className="font-bold">{title}</h3><p className="mt-1 text-sm leading-6 text-primary-foreground/65">{description}</p></div></div>)}</div></div></section>
 
-      <section className="bg-section py-20 sm:py-24"><div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10"><SectionHeading eyebrow="Transparent rewards" title="Commission Structure" description="Your direct rate depends on your city and the product bucket. Eligible team sales also attract a fixed indirect rate." /><div className="overflow-hidden rounded-lg border border-border bg-card shadow-sm"><div className="bg-jforce-teal px-6 py-5 text-primary-foreground"><h3 className="text-lg font-bold">B2C Direct Commission</h3><p className="mt-1 text-sm text-primary-foreground/70">Percentage of eligible delivered order value</p></div><div className="overflow-x-auto"><table className="w-full min-w-[620px] text-left"><thead><tr className="border-b border-border bg-muted"><th className="p-4 text-sm font-bold text-jforce-navy">City Location</th><th className="p-4 text-sm font-bold text-jforce-navy">Low</th><th className="p-4 text-sm font-bold text-jforce-navy">Medium</th><th className="p-4 text-sm font-bold text-jforce-navy">High</th></tr></thead><tbody><tr className="border-b border-border"><td className="p-4 font-semibold">Kampala, Entebbe, Jinja</td><td className="p-4">1%</td><td className="p-4">2%</td><td className="p-4">3%</td></tr><tr><td className="p-4 font-semibold">Other Cities</td><td className="p-4">2%</td><td className="p-4">4%</td><td className="p-4">6%</td></tr></tbody></table></div></div><div className="mt-6 grid gap-5 md:grid-cols-3"><div className="bucket-card"><span>Low</span><h3>Everyday essentials</h3><p>Appliances, Beverages, Computers, Mobile Phones</p></div><div className="bucket-card"><span>Medium</span><h3>Popular technology & style</h3><p>Cameras, Fashion, TVs, Tablets, Consoles</p></div><div className="bucket-card"><span>High</span><h3>Lifestyle favourites</h3><p>Beauty, Auto, Books, Kids &amp; Baby, Sports</p></div></div>
+      <section className="bg-section py-20 sm:py-24"><div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10"><SectionHeading eyebrow="Transparent rewards" title="Commission Structure" description="Your direct rate depends on your region and product bucket. Eligible team sales also attract a fixed 1% indirect rate." /><div className="overflow-hidden rounded-lg border border-border bg-card shadow-sm"><div className="bg-jforce-teal px-6 py-5 text-primary-foreground"><h3 className="text-lg font-bold">B2C Direct Commission Rates (All Levels)</h3><p className="mt-1 text-sm text-primary-foreground/70">Percentage of eligible delivered order value</p></div><div className="overflow-x-auto"><table className="w-full min-w-[620px] text-left"><thead><tr className="border-b border-border bg-muted"><th className="p-4 text-sm font-bold text-jforce-navy">Region / Location</th><th className="p-4 text-sm font-bold text-jforce-navy">Low</th><th className="p-4 text-sm font-bold text-jforce-navy">Medium</th><th className="p-4 text-sm font-bold text-jforce-navy">High</th><th className="p-4 text-sm font-bold text-jforce-navy">Super High</th></tr></thead><tbody><tr className="border-b border-border"><td className="p-4 font-semibold">Prime (Greater Kampala &amp; Entebbe)</td><td className="p-4 font-bold text-primary">1.00%</td><td className="p-4 font-bold text-primary">1.50%</td><td className="p-4 font-bold text-primary">2.00%</td><td className="p-4 font-bold text-primary">3.00%</td></tr><tr><td className="p-4 font-semibold">Non Prime (Upcountry)</td><td className="p-4 font-bold text-primary">1.50%</td><td className="p-4 font-bold text-primary">2.30%</td><td className="p-4 font-bold text-primary">3.00%</td><td className="p-4 font-bold text-primary">4.50%</td></tr></tbody></table></div></div><div className="mt-6 grid gap-5 md:grid-cols-2 lg:grid-cols-4"><div className="bucket-card"><span>Low</span><h3>Essentials &amp; Care</h3><p>Beverages, Food cupboard, Household care, Laundry, Livestock</p></div><div className="bucket-card"><span>Medium</span><h3>Tech &amp; Electronics</h3><p>Appliances, Cameras, Mobile Accessories, Mobile Phones, Printers, Tablets, TV &amp; Video Accessories</p></div><div className="bucket-card"><span>High</span><h3>Home &amp; Hardware</h3><p>Camera Accessories, Computer, Consoles, Home, Small Appliances, Tablet Accessories, Tobacco</p></div><div className="bucket-card"><span>Super High</span><h3>Style, Sports &amp; Auto</h3><p>Fashion, Automotive &amp; Motorcycles, Books &amp; Stationery, Computer accessories, Games, Kids and Baby, Musical Instruments, Sport &amp; Fitness</p></div></div>
       <div className="mt-10"><EarningsCalculator /></div>
-      <div className="mt-6 grid gap-5 lg:grid-cols-3"><article className="info-card"><WalletCards /><div><h3>Payout Dates</h3><p>15th–18th of the month and 2nd–5th of the following month.</p></div></article><article className="info-card"><UsersRound /><div><h3>Indirect Commission</h3><p>0.5% fixed across all levels with a UGX 130,000 monthly team threshold.</p></div></article><article className="info-card"><PackageCheck /><div><h3>General Rules</h3><p>UGX 65,000 minimum delivered order value twice monthly. Paid only on Delivered Final items.</p></div></article></div></div></section>
+      <div className="mt-6 grid gap-5 lg:grid-cols-3"><article className="info-card"><WalletCards /><div><h3>Payout Dates</h3><p>1st Payout: 15th–18th of the month. 2nd Payout: 2nd–5th of the following month.</p></div></article><article className="info-card"><UsersRound /><div><h3>Indirect Commission</h3><p>Fixed at 1% across all levels. Minimum team sales must be UGX 360,000 completed per month excluding the team leader.</p></div></article><article className="info-card"><PackageCheck /><div><h3>General Rules</h3><p>Consultants must place a minimum order(s) worth UGX 180,000 to be eligible for commission. Paid on orders that attain Delivered Final status (15 days post-delivery).</p></div></article></div></div></section>
 
       <section className="py-20 sm:py-24"><div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10"><SectionHeading eyebrow="Grow every month" title="New JForce Levels" description="Climb the ladder as your monthly sales volume increases and aim for the top." /><div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-6">{levels.map(({ name, target, color, icon: Icon }, index) => <article key={name} className="relative overflow-hidden rounded-lg border border-border bg-card p-5 text-center shadow-sm"><div className={`mx-auto grid size-12 place-items-center rounded-full ${color} text-primary-foreground`}><Icon className="size-5" /></div><p className="mt-4 text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground">Level {index + 1}</p><h3 className="mt-1 font-extrabold text-jforce-navy">{name}</h3><p className="mt-2 text-sm font-bold text-primary">{target}</p></article>)}</div></div></section>
 
