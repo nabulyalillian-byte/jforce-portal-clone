@@ -56,7 +56,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-const JOIN_URL = "https://jforce.jumia.co.ug/join";
+const JOIN_URL = "https://jforce.jumia.ug/join";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -123,7 +123,7 @@ const joinSteps = [
 ];
 
 const orderSteps = [
-  ["Download the Jumia app", "Get the Jumia app from Google Play or the App Store, or visit jumia.co.ug."],
+  ["Download the Jumia app", "Get the Jumia app from Google Play or the App Store, or visit jumia.ug."],
   ["Log in to your account", "Use the Jumia account connected to your registered JForce details."],
   ["Find a product", "Use the search bar or browse categories to find what your customer needs."],
   ["Open the product page", "Check the product details, price, seller rating, and availability."],
@@ -281,7 +281,7 @@ function Index() {
 
       <section className="relative overflow-hidden bg-cta py-20 sm:py-24"><div className="ambient ambient-three" aria-hidden="true" /><div className="relative mx-auto max-w-4xl px-5 text-center sm:px-8"><div className="mx-auto grid size-16 place-items-center rounded-full bg-primary-foreground/15 text-primary-foreground"><Rocket className="size-8" /></div><h2 className="mt-6 text-3xl font-black text-primary-foreground sm:text-5xl">Ready to turn your network into income?</h2><p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-primary-foreground/80">Join thousands of motivated consultants building flexible businesses with JForce.</p><Button asChild size="lg" className="mt-8 h-13 rounded-full bg-card px-7 text-base font-bold text-primary shadow-xl hover:bg-card/90"><a href={JOIN_URL} target="_blank" rel="noreferrer">Join JForce Today <ArrowRight /></a></Button><p className="mt-7 font-black text-jforce-yellow">KAMPALA · ENTEBBE · JINJA · EVERYWHERE IN UGANDA</p></div></section>
 
-      <footer className="bg-footer py-12 text-primary-foreground"><div className="mx-auto grid max-w-7xl gap-9 px-5 sm:px-8 md:grid-cols-[1fr_auto] md:items-end lg:px-10"><div><p className="text-2xl font-black">JUMIA <span className="text-primary">JFORCE</span></p><p className="mt-3 max-w-md text-sm leading-6 text-primary-foreground/60">Helping independent sales consultants connect customers to the products they love.</p><div className="mt-5 flex gap-3"><a className="social-link" href="https://www.jumia.co.ug/sp-jforce/" target="_blank" rel="noreferrer" aria-label="Visit JForce website"><Building2 /></a><a className="social-link" href="https://web.facebook.com/jumiauganda" target="_blank" rel="noreferrer" aria-label="Visit JForce on Facebook"><Facebook /></a><a className="social-link" href="https://www.instagram.com/jumiauganda" target="_blank" rel="noreferrer" aria-label="Visit JForce on Instagram"><Instagram /></a></div></div><div className="space-y-3 text-sm text-primary-foreground/65"><p className="flex items-center gap-2"><MapPin className="size-4 text-primary" /> Uganda</p><a className="flex items-center gap-2 hover:text-primary-foreground" href="https://www.jumia.co.ug/sp-jforce/" target="_blank" rel="noreferrer"><ChevronRight className="size-4 text-primary" /> Official JForce website</a><a className="flex items-center gap-2 hover:text-primary-foreground" href={JOIN_URL} target="_blank" rel="noreferrer"><ChevronRight className="size-4 text-primary" /> Become a consultant</a></div></div><div className="mx-auto mt-10 max-w-7xl border-t border-primary-foreground/10 px-5 pt-6 text-xs text-primary-foreground/45 sm:px-8 lg:px-10">© 2026 Jumia JForce. All rights reserved.</div></footer>
+      <footer className="bg-footer py-12 text-primary-foreground"><div className="mx-auto grid max-w-7xl gap-9 px-5 sm:px-8 md:grid-cols-[1fr_auto] md:items-end lg:px-10"><div><p className="text-2xl font-black">JUMIA <span className="text-primary">JFORCE</span></p><p className="mt-3 max-w-md text-sm leading-6 text-primary-foreground/60">Helping independent sales consultants connect customers to the products they love.</p><div className="mt-5 flex gap-3"><a className="social-link" href="https://www.jumia.ug/sp-jforce/" target="_blank" rel="noreferrer" aria-label="Visit JForce website"><Building2 /></a><a className="social-link" href="https://web.facebook.com/jumiauganda" target="_blank" rel="noreferrer" aria-label="Visit JForce on Facebook"><Facebook /></a><a className="social-link" href="https://www.instagram.com/jumiauganda" target="_blank" rel="noreferrer" aria-label="Visit JForce on Instagram"><Instagram /></a></div></div><div className="space-y-3 text-sm text-primary-foreground/65"><p className="flex items-center gap-2"><MapPin className="size-4 text-primary" /> Uganda</p><a className="flex items-center gap-2 hover:text-primary-foreground" href="https://www.jumia.ug/sp-jforce/" target="_blank" rel="noreferrer"><ChevronRight className="size-4 text-primary" /> Official JForce website</a><a className="flex items-center gap-2 hover:text-primary-foreground" href={JOIN_URL} target="_blank" rel="noreferrer"><ChevronRight className="size-4 text-primary" /> Become a consultant</a></div></div><div className="mx-auto mt-10 max-w-7xl border-t border-primary-foreground/10 px-5 pt-6 text-xs text-primary-foreground/45 sm:px-8 lg:px-10">© 2026 Jumia JForce. All rights reserved.</div></footer>
     </main>
   );
 }

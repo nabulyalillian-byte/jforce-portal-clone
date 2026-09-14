@@ -6,7 +6,7 @@ Replicate the exact design, layout, content, and interactive features of the Jum
    - Gradient background (`from-[#FFF7F0] via-[#FDFDFD] to-[#F5F7FA]`), subtle animated ambient blur circles.
    - Bold headline: "Make Money Online by Joining JForce as a Sales Consultant" with gradient text accent.
    - Subtitle: "Set your own working hours, earn competitive commissions, and be part of a growing community of successful sales professionals."
-   - Primary CTA: "Join JForce Today" (linking to https://jforce.jumia.co.ug/join).
+   - Primary CTA: "Join JForce Today" (linking to https://jforce.jumia.ug/join).
    - Hero visual with rounded corners and shadow using: https://ng.jumia.is/cms/0-1-initiatives/jforce/2025/hero.jpg
 
 2. Brand Logo Marquee / Slider:
