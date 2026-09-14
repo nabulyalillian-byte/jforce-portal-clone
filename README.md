@@ -1,14 +1,68 @@
-# Welcome to your Lovable project
+# JForce Portal Clone
+
+Replicate the exact design, layout, content, and interactive features of the Jumia JForce portal (from jumi-clone-sp-jforce.vercel.app):
+
+1. Hero Section:
+   - Gradient background (`from-[#FFF7F0] via-[#FDFDFD] to-[#F5F7FA]`), subtle animated ambient blur circles.
+   - Bold headline: "Make Money Online by Joining JForce as a Sales Consultant" with gradient text accent.
+   - Subtitle: "Set your own working hours, earn competitive commissions, and be part of a growing community of successful sales professionals."
+   - Primary CTA: "Join JForce Today" (linking to https://jforce.jumia.com.ng/join).
+   - Hero visual with rounded corners and shadow using: https://ng.jumia.is/cms/0-1-initiatives/jforce/2025/hero.jpg
+
+2. Brand Logo Marquee / Slider:
+   - "Trusted by Jumia Nigeria & global brands"
+   - Infinite horizontal scrolling track with grayscale-to-color hover cards for brands: Xiaomi, Adidas, Century, Nivea, Samsung, Unilever, Reckitt, Tecno, Infinix, Ecoflow.
+
+3. "Why Join the JForce Affiliate Program?":
+   - Clean card grid with benefits: Unlimited Earning Potential, Sell Trusted Products, Flexible Work Hours, Dedicated Support & Community.
+
+4. "Who Can Become a JForce Agent?":
+   - 6 category cards with icons: Students, Marketing Professionals, Sales Enthusiasts, Entrepreneurs & Business Owners, Social Media Influencers, and Anyone passionate about making extra income.
+
+5. "How Jumia JForce Works":
+   - 4 numbered roadmap steps: 1. Sign Up, 2. Get Trained, 3. Start Selling, 4. Earn Commissions.
+
+6. "How to Place Your First Order":
+   - Step-by-step vertical timeline (Steps 1 to 12) guiding agents from downloading the app, logging in, selecting products, adding to cart, entering delivery address, choosing payment, and reviewing order.
+
+7. "Commission Structure" & Interactive Earnings Calculator:
+   - B2C Commission Table with Navy/Teal header (#1f5673, #174863):
+     - Lagos, Abuja, Ibadan: Low (1%), Medium (2%), High (3%)
+     - Other Cities: Low (2%), Medium (4%), High (6%)
+   - Buckets & Categories breakdown (Low: Appliances, Beverages, Computers, Mobile Phones; Medium: Cameras, Fashion, TVs, Tablets, Consoles; High: Beauty, Auto, Books, Kids & Baby, Sports).
+   - Indirect Commission details (0.5% fixed across all levels, ₦130,000 monthly team threshold).
+   - Payout dates cards (15th–18th of the month and 2nd–5th of following month).
+   - General rules cards (₦65,000 min order delivered twice monthly, paid only on Delivered Final items).
+   - Working Interactive Earnings Calculator:
+     - Select City Location (Lagos/Abuja/Ibadan vs Other Cities)
+     - Select Product Bucket (Low, Medium, High)
+     - Input sales amount in Naira (₦)
+     - Dynamic calculation of Estimated Direct Commission percentage and total amount, plus indirect commission info.
+
+8. "New JForce Levels":
+   - Target tiers and monthly sales volume ladder (Bronze to Top tiers with progressive targets up to ₦13,000,000+).
+
+9. "Frequently Asked Questions" (Accordion):
+   - Expandable interactive accordion for common agent questions (how to make money, what is JForce, what to sell, earnings, activation).
+
+10. "Testimonial from a J-Force Agent":
+    - Video embed card with browser header controls (red, yellow, green dots) and YouTube embed (https://www.youtube.com/embed/aIbDDBcI2WQ).
+
+11. "Meet Our Managers":
+    - Regional managers grid: Dorcas Adetona (Operations Manager), Ezekiel Solomon (Regional Manager Lagos & S/West), Stephen Ogwuche (North Central), Daniel Akuma (S/East & S/South), Kasimu Mudi (North East & West) with photos, titles, and mailto links.
+    - Footer contact links to JForce website & Facebook page.
+
+Use Jumia's signature orange (#f68b1e) and deep navy/teal (#1f5673) palette, crisp typography, smooth hover animations, and fully responsive layouts.
 
 This project was built with [Lovable](https://lovable.dev).
 
 ## Build with Lovable
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/27447955-7c45-4ef6-a741-480b70015811).
 
 - **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+- **Stay in sync**: every change made in Lovable is committed straight to this repository.
+- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
 
 ## Development
 
@@ -20,10 +74,3 @@ cd <repository-name>
 npm i
 npm run dev
 ```
-
-## Built with
-
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
