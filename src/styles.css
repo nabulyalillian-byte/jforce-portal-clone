@@ -59,18 +59,37 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --color-jforce-navy: var(--jforce-navy);
+  --color-jforce-teal: var(--jforce-teal);
+  --color-jforce-aqua: var(--jforce-aqua);
+  --color-jforce-yellow: var(--jforce-yellow);
+  --color-primary-soft: var(--primary-soft);
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-level-bronze: var(--level-bronze);
+  --color-level-silver: var(--level-silver);
+  --color-level-gold: var(--level-gold);
+  --color-level-platinum: var(--level-platinum);
+  --color-level-diamond: var(--level-diamond);
+  --color-browser-red: var(--browser-red);
+  --color-browser-yellow: var(--browser-yellow);
+  --color-browser-green: var(--browser-green);
+  --color-footer: var(--footer);
+  --shadow-jforce: 0 18px 45px -18px color-mix(in oklab, var(--jforce-navy) 28%, transparent);
+  --shadow-primary: 0 14px 32px -12px color-mix(in oklab, var(--primary) 60%, transparent);
+  --shadow-image: 0 28px 70px -24px color-mix(in oklab, var(--jforce-navy) 45%, transparent);
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
+  --radius: 0.5rem;
+  --background: oklch(0.995 0.002 80);
+  --foreground: oklch(0.25 0.025 240);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.129 0.042 264.695);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
+  --primary: oklch(0.7 0.2 52);
+  --primary-foreground: oklch(1 0 0);
   --secondary: oklch(0.968 0.007 247.896);
   --secondary-foreground: oklch(0.208 0.042 265.755);
   --muted: oklch(0.968 0.007 247.896);
@@ -81,7 +100,23 @@
   --destructive-foreground: oklch(0.984 0.003 247.858);
   --border: oklch(0.929 0.013 255.508);
   --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
+  --ring: oklch(0.7 0.2 52);
+  --jforce-navy: oklch(0.42 0.08 232);
+  --jforce-teal: oklch(0.36 0.07 230);
+  --jforce-aqua: oklch(0.8 0.09 202);
+  --jforce-yellow: oklch(0.9 0.17 91);
+  --primary-soft: oklch(0.96 0.04 60);
+  --success: oklch(0.58 0.16 145);
+  --success-soft: oklch(0.96 0.04 145);
+  --level-bronze: oklch(0.58 0.11 55);
+  --level-silver: oklch(0.68 0.01 250);
+  --level-gold: oklch(0.78 0.15 85);
+  --level-platinum: oklch(0.58 0.04 230);
+  --level-diamond: oklch(0.66 0.13 210);
+  --browser-red: oklch(0.64 0.22 28);
+  --browser-yellow: oklch(0.83 0.17 85);
+  --browser-green: oklch(0.69 0.17 145);
+  --footer: oklch(0.22 0.035 235);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -140,5 +175,104 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    letter-spacing: 0;
+    text-rendering: optimizeLegibility;
   }
+}
+
+@utility bg-hero {
+  background: linear-gradient(135deg, oklch(0.98 0.025 62), var(--background) 48%, oklch(0.97 0.012 240));
+}
+
+@utility bg-section {
+  background: linear-gradient(180deg, var(--background), oklch(0.975 0.008 240));
+}
+
+@utility bg-cta {
+  background: linear-gradient(135deg, var(--primary), oklch(0.78 0.18 75));
+}
+
+@utility text-gradient {
+  background: linear-gradient(90deg, var(--primary), oklch(0.78 0.18 75));
+  background-clip: text;
+  color: transparent;
+}
+
+@utility marquee-mask {
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+@utility marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 1rem;
+  animation: marquee 28s linear infinite;
+}
+
+@utility brand-card {
+  display: grid;
+  height: 4rem;
+  min-width: 10.5rem;
+  place-items: center;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--card);
+  padding: 0 1.25rem;
+  color: var(--jforce-navy);
+  font-size: 1.05rem;
+  font-weight: 800;
+  filter: grayscale(1);
+  opacity: 0.58;
+  transition: filter 200ms ease, opacity 200ms ease, transform 200ms ease;
+  &:hover { filter: grayscale(0); opacity: 1; transform: translateY(-2px); }
+}
+
+@utility bucket-card {
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--primary);
+  border-radius: var(--radius);
+  background: var(--card);
+  padding: 1.5rem;
+  & span { color: var(--primary); font-size: .75rem; font-weight: 800; text-transform: uppercase; letter-spacing: .14em; }
+  & h3 { margin-top: .5rem; color: var(--jforce-navy); font-weight: 800; }
+  & p { margin-top: .5rem; color: var(--muted-foreground); font-size: .875rem; line-height: 1.5rem; }
+}
+
+@utility info-card {
+  display: flex;
+  gap: 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--card);
+  padding: 1.25rem;
+  & > svg { width: 1.5rem; height: 1.5rem; flex-shrink: 0; color: var(--primary); }
+  & h3 { color: var(--jforce-navy); font-weight: 800; }
+  & p { margin-top: .35rem; color: var(--muted-foreground); font-size: .8rem; line-height: 1.25rem; }
+}
+
+@utility social-link {
+  display: grid;
+  width: 2.5rem;
+  height: 2.5rem;
+  place-items: center;
+  border: 1px solid color-mix(in oklab, var(--primary-foreground) 15%, transparent);
+  border-radius: 999px;
+  transition: background 200ms ease, color 200ms ease;
+  & svg { width: 1rem; height: 1rem; }
+  &:hover { background: var(--primary); color: var(--primary-foreground); }
+}
+
+.ambient { position: absolute; border-radius: 999px; filter: blur(70px); opacity: .34; pointer-events: none; animation: float-ambient 8s ease-in-out infinite; }
+.ambient-one { width: 19rem; height: 19rem; right: 7%; top: -7rem; background: var(--primary); }
+.ambient-two { width: 14rem; height: 14rem; left: -6rem; bottom: 3rem; background: var(--jforce-yellow); animation-delay: -3s; }
+.ambient-three { width: 22rem; height: 22rem; right: -6rem; top: -8rem; background: var(--jforce-yellow); opacity: .2; }
+
+@keyframes marquee { to { transform: translateX(calc(-50% - .5rem)); } }
+@keyframes float-ambient { 50% { transform: translate3d(0, 18px, 0) scale(1.04); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track, .ambient { animation: none; }
+  * { scroll-behavior: auto !important; }
 }
